@@ -1,0 +1,61 @@
+/* ChukoStock · bordado violeta sobre denim negro, estética japonesa */
+:root{--denim:#0c0c12;--panel:#16161f;--panel2:#1d1d2a;--linea:#34304a;--violeta:#8b5cf6;--lila:#c4b5fd;--sakura:#f9a8d4;--texto:#ece9f7;--suave:#a39fb8}
+html{scroll-behavior:smooth}
+body{font-family:'Zen Kaku Gothic New',sans-serif;color:var(--texto);line-height:1.6;min-height:100vh;
+ background-color:var(--denim);
+ background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.018) 0 2px,transparent 2px 6px),radial-gradient(circle at 15% 0%,rgba(139,92,246,.18),transparent 45%),radial-gradient(circle at 90% 30%,rgba(249,168,212,.08),transparent 40%);
+ background-attachment:fixed}
+h1,h2,h3{font-family:'Dela Gothic One',sans-serif;font-weight:400;letter-spacing:.3px}
+h1{font-size:clamp(1.8rem,4vw,2.6rem)}h2{font-size:1.5rem;margin:28px 0 14px;color:var(--lila)}h3{font-size:1.15rem;color:var(--lila)}
+a{color:var(--lila);transition:color .2s}a:hover{color:var(--sakura)}
+main{max-width:1040px;margin:32px auto;padding:0 16px;animation:subir .6s ease both}
+/* Barra superior */
+.navbar{background:rgba(12,12,18,.88)!important;backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.navbar-brand{font-family:'Dela Gothic One',sans-serif;font-size:1.4rem;background:linear-gradient(90deg,var(--lila),var(--sakura),var(--lila));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:brillo 5s linear infinite}
+.navbar .nav-link{position:relative;color:var(--texto)!important;transition:color .2s}
+.navbar .nav-link::after{content:"";position:absolute;left:.5rem;right:.5rem;bottom:2px;height:2px;background:var(--violeta);transform:scaleX(0);transition:transform .25s}
+.navbar .nav-link:hover::after,.navbar .nav-link.active::after{transform:scaleX(1)}
+.navbar .nav-link.active{color:var(--lila)!important}
+.acceso{font-size:1.2rem;padding:.4rem .6rem!important}.acceso .badge{font-size:.62rem;vertical-align:top;animation:pulso 2s infinite}
+.dropdown-menu{background:var(--panel);border:1px solid var(--linea);animation:subir .2s ease both}
+.dropdown-item{color:var(--texto)}.dropdown-item:hover{background:var(--panel2);color:var(--sakura)}
+/* Portada */
+.hero{padding:48px 28px;margin-bottom:28px;border:1px solid var(--linea);border-radius:16px;background:linear-gradient(135deg,rgba(139,92,246,.22),rgba(12,12,18,.6));position:relative;overflow:hidden}
+.hero::before{content:"中古";position:absolute;right:20px;top:-10px;font-family:'Dela Gothic One',sans-serif;font-size:7rem;color:rgba(196,181,253,.09);animation:flotar 6s ease-in-out infinite}
+.hero p{max-width:640px;color:var(--suave);font-size:1.1rem}
+/* Tarjetas y cajas */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.card,.caja{background:var(--panel);border:1px solid var(--linea);border-radius:12px;padding:12px;color:var(--texto);text-decoration:none}
+.card{gap:6px;transition:transform .25s,box-shadow .25s,border-color .25s;animation:subir .5s ease both}
+.card:hover{transform:translateY(-6px);border-color:var(--violeta);box-shadow:0 10px 28px rgba(139,92,246,.35);color:var(--texto)}
+.grid .card:nth-child(2){animation-delay:.08s}.grid .card:nth-child(3){animation-delay:.16s}.grid .card:nth-child(4){animation-delay:.24s}.grid .card:nth-child(5){animation-delay:.32s}.grid .card:nth-child(6){animation-delay:.4s}
+.caja{padding:18px;margin-bottom:16px}
+.foto{height:170px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--lila);
+ background:linear-gradient(110deg,#1e1b2e 30%,#2c2745 50%,#1e1b2e 70%);background-size:200% 100%;animation:shimmer 2.4s linear infinite}
+.foto.g{height:340px;font-size:1.3rem}
+.precio{font-family:'Dela Gothic One',sans-serif;color:var(--sakura);font-size:1.15rem}small{color:var(--suave)}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media(max-width:700px){.dos{grid-template-columns:1fr}}
+/* Botones */
+.btn,button{background:linear-gradient(135deg,var(--violeta),#6d28d9);color:#fff;border:0;border-radius:999px;padding:10px 22px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .2s,box-shadow .2s,filter .2s}
+.btn:hover,button:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(139,92,246,.5);color:#fff;filter:brightness(1.1)}
+.btn.sec{background:transparent;border:1px solid var(--violeta);color:var(--lila)}.btn.sec:hover{background:rgba(139,92,246,.18)}
+/* Formularios */
+form{display:flex;flex-direction:column;gap:12px;max-width:440px}label{display:flex;flex-direction:column;gap:4px;color:var(--suave);font-size:.95rem}
+input,select,textarea{font:inherit;padding:10px 12px;background:var(--panel2);color:var(--texto);border:1px solid var(--linea);border-radius:8px;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--violeta);box-shadow:0 0 0 3px rgba(139,92,246,.3)}
+input[type=checkbox]{accent-color:var(--violeta)}label:has(input[type=checkbox]){flex-direction:row;align-items:center}
+.filtros{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;padding:14px;background:var(--panel);border:1px solid var(--linea);border-radius:12px}
+/* Tablas */
+table{border-collapse:separate;border-spacing:0;width:100%;background:var(--panel);border:1px solid var(--linea);border-radius:12px;overflow:hidden}
+th{background:var(--panel2);color:var(--lila);font-weight:700}td,th{padding:11px 14px;border-bottom:1px solid var(--linea);text-align:left}
+tr:last-child td{border-bottom:0}tbody tr{transition:background .2s}tr:hover td{background:rgba(139,92,246,.08)}
+/* Pie */
+footer{margin-top:56px;padding:32px 16px;text-align:center;background:#08080d;border-top:1px solid var(--linea);color:var(--suave)}
+footer form{flex-direction:row;justify-content:center;margin:12px auto;max-width:460px}
+/* Animaciones */
+@keyframes subir{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes shimmer{to{background-position:-200% 0}}
+@keyframes brillo{to{background-position:200% center}}
+@keyframes pulso{50%{transform:scale(1.25)}}
+@keyframes flotar{50%{transform:translateY(12px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
