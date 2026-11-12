@@ -1,0 +1,11 @@
+<?php
+// Copiá este archivo como config.local.php y ajustá tus datos.
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'chukostock');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+
+// Emails de las cuentas que pueden moderar prendas y gestionar pedidos
+define('MODERADORES', ['tu-email@ejemplo.com']);
+
+// define('EMAIL_AYUDA', 'ayuda@tudominio.com');

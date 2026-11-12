@@ -1,0 +1,21 @@
+# Configuración con claves (cada uno la suya)
+config.local.php
+
+# Fotos subidas por los usuarios (se conservan las reglas de la carpeta)
+uploads/prendas/*
+!uploads/prendas/.gitkeep
+!uploads/prendas/.htaccess
+
+# Archivos crudos de MySQL/MariaDB: no van a Git, usá sql/*.sql
+*.frm
+*.ibd
+*.MYD
+*.MYI
+ibdata*
+ib_logfile*
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,5 @@
+# Seguridad básica (Apache / XAMPP)
+Options -Indexes
+<FilesMatch "^(config(\.local)?\.php(\.example)?|.*\.sql|.*\.md)$">
+    Require all denied
+</FilesMatch>
